@@ -100,6 +100,7 @@ public class TextModActivity extends ActionBarActivity implements View.OnClickLi
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_text_mod, menu);
         return true;
+
     }
 
     @Override
