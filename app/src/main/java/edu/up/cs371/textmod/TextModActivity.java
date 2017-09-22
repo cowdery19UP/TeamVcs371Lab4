@@ -4,10 +4,7 @@ package edu.up.cs371.textmod;
  * class TextModActivity
  *Sam was here
  *And my ax
- * andrew
- *Kevin ruined family dinner
- *
- *
+* chuchumut
  * Allow text to be modified in simple ways with button-presses.
  */
 import android.content.res.TypedArray;
@@ -41,6 +38,8 @@ public class TextModActivity extends ActionBarActivity implements View.OnClickLi
     private Button clearButton;//button that clears the text field
     private EditText textView; //region in which text is
 
+    private EditText mainText;
+    private Button copyName;
     /**
      * @see android.app.Activity#onCreate(android.os.Bundle)
      */
@@ -53,7 +52,8 @@ public class TextModActivity extends ActionBarActivity implements View.OnClickLi
 
         // set instance variables for our widgets
         imageView = (ImageView)findViewById(R.id.imageView);
-
+        mainText = (EditText)findViewById(R.id.mainText);
+        copyName = (Button)findViewById(R.id.button2);
         // Set up the spinner so that it shows the names in the spinner array resources
         //
         // get spinner object
@@ -67,7 +67,7 @@ public class TextModActivity extends ActionBarActivity implements View.OnClickLi
         // bind the spinner and adapter
         spinner.setAdapter(adapter);
 
-        textView = (EditText)findViewById(R.id.editText);
+        textView = (EditText)findViewById(R.id.mainText);
         upperCase = (Button)findViewById(R.id.button6);
         clearButton = (Button)findViewById(R.id.clear_button);
         upperCase.setOnClickListener(this);
@@ -91,6 +91,8 @@ public class TextModActivity extends ActionBarActivity implements View.OnClickLi
 
         // define a listener for the spinner
         spinner.setOnItemSelectedListener(new MySpinnerListener());
+        //define a listener for the button2
+        copyName.setOnClickListener(this);
 
     }
 
@@ -102,11 +104,12 @@ public class TextModActivity extends ActionBarActivity implements View.OnClickLi
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_text_mod, menu);
         return true;
-
     }
 
     @Override
     public void onClick(View v){
+
+
         if(v == upperCase){
             String toEdit = textView.getText().toString();
             String toReturn = toEdit.toUpperCase();
@@ -114,6 +117,10 @@ public class TextModActivity extends ActionBarActivity implements View.OnClickLi
         }
         if(v == clearButton){
             textView.setText("");
+        }
+        String funText = "funtext"+getResources().getString(R.array.spinner_names);
+        if(v.getId() == R.id.button2){
+            mainText.setText(funText);
         }
     }
 
