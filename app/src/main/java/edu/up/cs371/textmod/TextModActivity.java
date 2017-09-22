@@ -13,6 +13,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,6 +22,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import java.util.ArrayList;
@@ -32,7 +35,8 @@ public class TextModActivity extends ActionBarActivity implements View.OnClickLi
 
     // instance variables containing widgets
     private ImageView imageView; // the view that shows the image
-    private Button upperCase = (Button)findViewById(R.id.button6);
+    private Button upperCase; //button that converts the text to upper case
+    private EditText textView; //region in which text is
 
     /**
      * @see android.app.Activity#onCreate(android.os.Bundle)
@@ -59,6 +63,10 @@ public class TextModActivity extends ActionBarActivity implements View.OnClickLi
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // bind the spinner and adapter
         spinner.setAdapter(adapter);
+
+        textView = (EditText)findViewById(R.id.editText);
+        upperCase = (Button)findViewById(R.id.button6);
+        upperCase.setOnClickListener(this);
 
         // load the images from the resources
         //
@@ -93,7 +101,12 @@ public class TextModActivity extends ActionBarActivity implements View.OnClickLi
 
     @Override
     public void onClick(View v){
-        if(v == )
+        if(v == upperCase){
+            Log.i("onClick","Button Pressed");
+            String toEdit = textView.getText().toString();
+            String toReturn = toEdit.toUpperCase();
+            textView.setText(toReturn);
+        }
     }
 
     /**
