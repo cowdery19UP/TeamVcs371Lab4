@@ -2,6 +2,8 @@ package edu.up.cs371.textmod;
 
 /**
  * class TextModActivity
+ *Sam was here
+ *
  *
  * Allow text to be modified in simple ways with button-presses.
  */
