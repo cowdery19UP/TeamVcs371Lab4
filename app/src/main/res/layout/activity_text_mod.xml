@@ -24,17 +24,17 @@
             android:layout_weight="1" />
 
         <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Text to process: "
-            android:id="@+id/textView"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="@dimen/label_font_size" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/editText"
+            android:id="@+id/spinner_names"
             android:layout_weight="1"
             android:textSize="@dimen/edittext_font_size"
             android:singleLine="true"

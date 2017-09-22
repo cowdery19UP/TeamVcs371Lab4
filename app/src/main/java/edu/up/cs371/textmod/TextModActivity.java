@@ -6,6 +6,8 @@ package edu.up.cs371.textmod;
  *And my ax
  * andrew
  *Kevin ruined family dinner
+ *
+ *
  * Allow text to be modified in simple ways with button-presses.
  */
 import android.content.res.TypedArray;
@@ -136,7 +138,7 @@ public class TextModActivity extends ActionBarActivity implements View.OnClickLi
          */
         @Override
         public void onNothingSelected(AdapterView<?> parentView) {
-            // your code here
+
         }
     }
 }
