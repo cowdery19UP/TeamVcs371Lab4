@@ -36,6 +36,7 @@ public class TextModActivity extends ActionBarActivity implements View.OnClickLi
     // instance variables containing widgets
     private ImageView imageView; // the view that shows the image
     private Button upperCase; //button that converts the text to upper case
+    private Button clearButton;//button that clears the text field
     private EditText textView; //region in which text is
 
     /**
@@ -66,7 +67,9 @@ public class TextModActivity extends ActionBarActivity implements View.OnClickLi
 
         textView = (EditText)findViewById(R.id.editText);
         upperCase = (Button)findViewById(R.id.button6);
+        clearButton = (Button)findViewById(R.id.clear_button);
         upperCase.setOnClickListener(this);
+        clearButton.setOnClickListener(this);
 
         // load the images from the resources
         //
@@ -102,10 +105,12 @@ public class TextModActivity extends ActionBarActivity implements View.OnClickLi
     @Override
     public void onClick(View v){
         if(v == upperCase){
-            Log.i("onClick","Button Pressed");
             String toEdit = textView.getText().toString();
             String toReturn = toEdit.toUpperCase();
             textView.setText(toReturn);
+        }
+        if(v == clearButton){
+            textView.setText("");
         }
     }
 
