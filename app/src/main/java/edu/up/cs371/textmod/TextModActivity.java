@@ -19,11 +19,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import java.util.ArrayList;
 
-public class TextModActivity extends ActionBarActivity {
+public class TextModActivity extends ActionBarActivity implements View.OnClickListener{
 
 
     // array-list that contains our images to display
@@ -31,6 +32,7 @@ public class TextModActivity extends ActionBarActivity {
 
     // instance variables containing widgets
     private ImageView imageView; // the view that shows the image
+    private Button upperCase = (Button)findViewById(R.id.button6);
 
     /**
      * @see android.app.Activity#onCreate(android.os.Bundle)
@@ -87,6 +89,11 @@ public class TextModActivity extends ActionBarActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_text_mod, menu);
         return true;
+    }
+
+    @Override
+    public void onClick(View v){
+        if(v == )
     }
 
     /**
